@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Homepage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+<body>
+
+<header>
+    <nav>
+        <div class="logo">
+            <a href="{{ url_for('upload') }}"><img src="./static/images/logo.png" alt="" height="90px"></a>
+        </div>
+        
+        <ul>
+            <li><a href="{{ url_for('upload') }}">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <ul>
+             <li><a href="#">Sign in</a></li>
+        </ul>
+    </nav>
+    <div class="heading">Scan once<br> Extract instantly. <br>Stay organized forever.</div>
+    
+
+    <div class="container">
+        <div class="card">
+            <h3 id="head-1">Upload Medical Bill</h3>
+            <form method="POST" enctype="multipart/form-data" onsubmit="return validateFile()">
+                <div class="form-div">
+                    <label class="form-label">Select Bill Image</label>
+                    <input type="file" class="form-control" name="bill" id="billFile" required>
+                </div>
+                </div class="form-button">
+                    <button type="submit" class="btn">Extract Data</button>
+                </div>
+                
+            </form>
+        </div>
+
+    </div>
+    <script>
+        function validateFile() {
+            let fileInput = document.getElementById("billFile");
+            let filePath = fileInput.value;
+            let allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+
+            if (!allowedExtensions.exec(filePath)) {
+                alert("Please upload only JPG, JPEG, or PNG file.");
+                fileInput.value = '';
+                return false;
+            }
+            return true;
+        }
+</script>
+
+   
+</header>
+
+</body>
+</html>

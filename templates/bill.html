@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Medical Bill</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bill.css') }}">
+</head>
+<body>
+
+    <div class="bill-container">
+        
+        <!-- Header -->
+        <div class="bill-header">
+            <h1>City Care Hospital</h1>
+            <p>123 Health Street, Mumbai, India</p>
+            <p>Phone: +91 9876543210 | Email: info@citycare.com</p>
+        </div>
+
+        <!-- Bill Info -->
+        <div class="bill-info">
+            <div>
+                <p><strong>Bill No:</strong> 1023</p>
+                <p><strong>Date:</strong> 19-02-2026</p>
+            </div>
+            <div>
+                <p><strong>Patient Name:</strong> {{ patient_name }}</p>
+                <p><strong>Doctor:</strong> Dr. Mehta</p>
+            </div>
+        </div>
+
+        <!-- Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Qty</th>
+                    <th>Rate (₹)</th>
+                    <th>Total (₹)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Consultation Fee</td>
+                    <td>1</td>
+                    <td>500</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Blood Test</td>
+                    <td>1</td>
+                    <td>800</td>
+                    <td>800</td>
+                </tr>
+                <tr>
+                    <td>Medicines</td>
+                    <td>3</td>
+                    <td>250</td>
+                    <td>750</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Total Section -->
+        <div class="total-section">
+            <p><strong>Subtotal:</strong> ₹2050</p>
+            <p><strong>GST (5%):</strong> ₹102.5</p>
+            <h2>Grand Total: ₹2152.5</h2>
+        </div>
+
+        <!-- Footer -->
+        <div class="bill-footer">
+            <p>Thank you for choosing City Care Hospital.</p>
+            <button onclick="window.print()">Print Bill</button>
+        </div>
+
+    </div>
+
+</body>
+</html>

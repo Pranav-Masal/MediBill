@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/preview.css') }}">
+    
+    <title>Document</title>
+</head>
+<body>
+    <header>
+    <nav>
+        <div class="logo">
+            <a href="{{url_for('upload')}}"><img src="./static/images/logo.png" alt="" height="90px"></a>
+        </div>
+        
+        <ul>
+            <li><a href="{{url_for('upload')}}">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <ul>
+             <li><a href="#">Sign in</a></li>
+        </ul>
+        
+
+    </nav>
+    <div class="container">
+       
+    <div class="left"><img src="./static/images/doctor-img.png" alt="" height="640px"></div>
+    <div class="right">
+         <h2>Edit & Confirm Bill Details </h2>
+        <form action="/save" method="POST">
+            <div class="form-div">
+                <label class="form-label">Patient Name</label>
+                <input type="text" name="patient_name" class="form-control" 
+                  value="{{ patient_name }}" required >
+            </div>
+
+            
+            <div class="form-div">
+                <label class="form-label">Total Amount (₹)</label>
+                <input type="number" name="total_amount" class="form-control" 
+                       value="{{ total_amount }}" id="amount" required>
+            </div>
+
+            
+            
+
+            <div class="form-div">
+                <label class="form-label">Date</label>
+                <input type="text" name="date" class="form-control" 
+                       value="{{ date }}" required>
+            </div>
+            <div class="form-div">
+                <label class="form-label">GST (5%)</label>
+                <input type="text" class="form-control" id="gst" readonly>
+            </div>
+
+            
+
+            <div class="form-div">
+                <label class="form-label">Phone Number</label>
+                <input type="number" name="Phone_Number" class="form-control" 
+                       value="{{ Phone }}" required>
+            </div>
+
+            
+
+            <div class="form-div">
+                <label class="form-label">Grand Total</label>
+                <input type="text" class="form-control" id="grandTotal" readonly>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn">Generate Bill</button>
+            </div>
+
+        </form>
+    </div>
+    </div>
+    <script>
+let amountInput = document.getElementById("amount");
+let gstField = document.getElementById("gst");
+let grandTotalField = document.getElementById("grandTotal");
+
+amountInput.addEventListener("input", function() {
+    let amount = parseFloat(amountInput.value) || 0;
+    let gst = amount * 0.05;
+    let grandTotal = amount + gst;
+
+    gstField.value = gst.toFixed(2);
+    grandTotalField.value = grandTotal.toFixed(2);
+});
+</script>
+</body>
+</html>
