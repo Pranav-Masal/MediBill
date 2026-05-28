@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header{
+    position: relative;
+    height: 100vh;
+
+  
+}
+
+header::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #60B6BF; 
+    
+}
+
+nav{
+    position: relative;
+    z-index: 2; 
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+   
+   
+
+}
+
+ul{
+    list-style: none;
+    display: flex;
+   
+}
+li{
+    margin: 20px;
+    font-size: 18px;
+    padding: 10px 15px;   
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+li:hover{
+    background-color: rgb(84, 99, 209);
+    box-shadow: 0 0 10px rgba(84, 99, 209, 0.6);
+    
+}
+a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+a:hover{
+    color: white;
+}
+.heading{
+    position: relative;
+    left: 300px;
+    color: aliceblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 5rem;
+    font-weight: 900px;
+ 
+    transition: 0.6s ease-in;
+}
+.container{
+    position: relative;
+    top: -40px;
+    height: 87vh;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 5;
+}
+.left{
+    position: relative;
+    right: 140px;
+    background-color: #F2C438; 
+    width: 600px;
+    padding-left: 50px;
+   
+}
+.right{
+    position: relative;
+    
+    bottom: 645px;
+    left: 460px;
+    width: 1053px;
+    padding: 20px;
+    height: 88vh;
+}
+.form-div{
+    display: inline-block;
+    padding: 30px;
+    
+    width: 430px;
+    height: 100px;
+    margin: 30px;
+    background-color:#9ee58b;
+    border-radius: 10px;
+    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.701), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.form-div:hover{
+    background-color: rgb(31, 29, 29);
+    color: white;
+    transition: 0.5s ease;
+}
+
+.form-control{
+ 
+    padding: 10px;
+    
+}
+input{
+    background-color: rgb(198, 179, 179);
+    border: hidden;
+    border-radius: 10px;
+}
+/* Button */
+
+.text-center{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.btn{
+    background-color: rgb(36, 36, 124);
+    color: white;
+    padding: 15px;
+    border: hidden;
+    border-radius: 10px;
+}
+.btn:hover{
+    background-color: rgb(72, 56, 162);
+    border: 2px solid rgb(255, 255, 255);
+}
+h2{
+    display: flex;
+    justify-content: center;
+}
